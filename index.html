@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TONI&GUY 홍제점 | London Fashion Week Hair</title>
+  <meta name="description" content="TONI&GUY 홍제점 - 런던 패션위크 헤어 스타일리스트. 서울 서대문구 홍제동 위치. 예약 및 문의." />
+  <meta property="og:title" content="TONI&GUY 홍제점 | London Fashion Week Hair" />
+  <meta property="og:description" content="런던 패션위크 헤어 스타일. 서울 홍제동 TONI&GUY 공식 살롱." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --white: #ffffff;
+      --gold: #c9a84c;
+      --gray: #888888;
+      --light: #f5f5f5;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 4rem;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      background: linear-gradient(160deg, #0a0a0a 0%, #1a1208 50%, #0a0a0a 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 0.4rem 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      letter-spacing: 0.02em;
+    }
+
+    .hero h1 span { color: var(--gold); }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--gray);
+      margin-bottom: 3rem;
+      letter-spacing: 0.05em;
+    }
+
+    .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+
+    .btn {
+      padding: 0.9rem 2.5rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid var(--gold);
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .btn-primary { background: var(--gold); color: var(--black); }
+    .btn-primary:hover { background: transparent; color: var(--gold); }
+    .btn-outline { background: transparent; color: var(--gold); }
+    .btn-outline:hover { background: var(--gold); color: var(--black); }
+
+    /* SECTION */
+    section { padding: 6rem 4rem; }
+
+    .section-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ABOUT */
+    .about {
+      background: #111;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-text p { color: var(--gray); margin-bottom: 1rem; font-size: 0.95rem; }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .stat-box {
+      border: 1px solid rgba(201,168,76,0.3);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--gold);
+      display: block;
+    }
+
+    .stat-label { font-size: 0.8rem; color: var(--gray); letter-spacing: 0.1em; }
+
+    /* SERVICES */
+    .services { background: var(--black); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .service-card {
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 2.5rem 2rem;
+      transition: border-color 0.3s;
+    }
+
+    .service-card:hover { border-color: var(--gold); }
+
+    .service-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .service-name { font-size: 1.1rem; font-weight: 500; margin-bottom: 0.5rem; }
+    .service-desc { font-size: 0.85rem; color: var(--gray); }
+    .service-price { margin-top: 1rem; color: var(--gold); font-size: 0.9rem; }
+
+    /* GALLERY */
+    .gallery { background: #111; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+
+    .gallery-item {
+      aspect-ratio: 3/4;
+      background: linear-gradient(135deg, #1a1208, #2a1f0a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: var(--gray);
+      letter-spacing: 0.1em;
+      border: 1px solid rgba(201,168,76,0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 60%);
+    }
+
+    .gallery-label {
+      position: absolute;
+      bottom: 1rem; left: 1rem;
+      z-index: 1;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+    }
+
+    /* CONTACT */
+    .contact { background: var(--black); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-top: 3rem;
+    }
+
+    .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+
+    .info-item { display: flex; flex-direction: column; gap: 0.3rem; }
+    .info-label { font-size: 0.75rem; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; }
+    .info-value { font-size: 0.95rem; color: var(--white); }
+
+    .kakao-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      background: #FEE500;
+      color: #000;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+      transition: opacity 0.3s;
+    }
+    .kakao-btn:hover { opacity: 0.85; }
+
+    .map-placeholder {
+      background: #1a1a1a;
+      border: 1px solid rgba(201,168,76,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 300px;
+      color: var(--gray);
+      font-size: 0.9rem;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #050505;
+      border-top: 1px solid rgba(201,168,76,0.15);
+      padding: 3rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--gold);
+    }
+
+    .footer-copy { font-size: 0.8rem; color: var(--gray); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      section { padding: 4rem 1.5rem; }
+      .about { grid-template-columns: 1fr; gap: 2rem; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      footer { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">TONI&amp;GUY</a>
+    <ul class="nav-links">
+      <li><a href="#about">살롱 소개</a></li>
+      <li><a href="#services">서비스</a></li>
+      <li><a href="#gallery">갤러리</a></li>
+      <li><a href="#contact">예약 / 문의</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">London Fashion Week Hair</div>
+    <h1>TONI&amp;GUY<br /><span>홍제점</span></h1>
+    <p class="hero-sub">서울 서대문구 홍제동 · 런던 패션위크 공식 헤어</p>
+    <div class="btn-group">
+      <a href="#contact" class="btn btn-primary">예약하기</a>
+      <a href="#services" class="btn btn-outline">서비스 보기</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-text">
+      <p class="section-label">About Us</p>
+      <h2 class="section-title">런던에서 시작된<br />글로벌 헤어 브랜드</h2>
+      <p>TONI&amp;GUY는 1963년 런던에서 설립된 세계적인 헤어 살롱 브랜드입니다. 매년 런던 패션위크의 공식 헤어 파트너로 활동하며 최신 트렌드를 선도하고 있습니다.</p>
+      <p>홍제점은 TONI&amp;GUY의 글로벌 기준과 한국 고객의 니즈를 결합하여 최상의 헤어 서비스를 제공합니다.</p>
+    </div>
+    <div class="about-stats">
+      <div class="stat-box">
+        <span class="stat-num">1963</span>
+        <span class="stat-label">런던 창립</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-num">50+</span>
+        <span class="stat-label">국가 진출</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-num">500+</span>
+        <span class="stat-label">글로벌 살롱</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-num">LFW</span>
+        <span class="stat-label">공식 헤어 파트너</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <p class="section-label">Services</p>
+    <h2 class="section-title">서비스 메뉴</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">✂️</div>
+        <div class="service-name">커트</div>
+        <div class="service-desc">런던 패션위크 트렌드를 반영한 정밀 커트 서비스</div>
+        <div class="service-price">상담 후 안내</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎨</div>
+        <div class="service-name">컬러</div>
+        <div class="service-desc">발레아쥬, 하이라이트, 전체 염색 등 다양한 컬러 시술</div>
+        <div class="service-price">상담 후 안내</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💫</div>
+        <div class="service-name">펌</div>
+        <div class="service-desc">볼륨펌, 매직, 디지털펌 등 맞춤형 웨이브 시술</div>
+        <div class="service-price">상담 후 안내</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💆</div>
+        <div class="service-name">트리트먼트</div>
+        <div class="service-desc">손상 모발 집중 케어 및 두피 관리 프로그램</div>
+        <div class="service-price">상담 후 안내</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <p class="section-label">Gallery</p>
+    <h2 class="section-title">스타일 갤러리</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <span class="gallery-label">Cut Style</span>
+      </div>
+      <div class="gallery-item">
+        <span class="gallery-label">Color Work</span>
+      </div>
+      <div class="gallery-item">
+        <span class="gallery-label">Perm Style</span>
+      </div>
+      <div class="gallery-item">
+        <span class="gallery-label">Balayage</span>
+      </div>
+      <div class="gallery-item">
+        <span class="gallery-label">Highlight</span>
+      </div>
+      <div class="gallery-item">
+        <span class="gallery-label">LFW Look</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <p class="section-label">Contact</p>
+    <h2 class="section-title">예약 및 문의</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="info-item">
+          <span class="info-label">주소</span>
+          <span class="info-value">서울특별시 서대문구 홍제동</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">운영시간</span>
+          <span class="info-value">화–토 10:00 – 20:00<br />일 10:00 – 18:00<br />월요일 휴무</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">전화</span>
+          <span class="info-value">예약 문의는 카카오채널 이용 권장</span>
+        </div>
+        <a href="https://pf.kakao.com" class="kakao-btn" target="_blank" rel="noopener">
+          💬 카카오채널 예약하기
+        </a>
+      </div>
+      <div class="map-placeholder">
+        <span>📍</span>
+        <span>서울 서대문구 홍제동</span>
+        <span style="font-size:0.75rem;">지도 연동 예정</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">TONI&amp;GUY 홍제점</div>
+    <div class="footer-copy">© 2026 TONI&amp;GUY Hongjae. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>

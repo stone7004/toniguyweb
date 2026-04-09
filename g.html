@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TONI&GUY 홍제 STYLE GALLERY</title>
+    <style>
+        body { margin: 0; font-family: 'Pretendard', sans-serif; background-color: #fff; }
+        .gallery-container { padding: 40px 10px; max-width: 1200px; margin: 0 auto; }
+        .gallery-title { text-align: center; font-size: 1.8rem; font-weight: bold; margin-bottom: 30px; }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .gallery-grid img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .gallery-grid img:hover { transform: scale(1.03); }
+        @media (max-width: 768px) {
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .gallery-grid img { height: 280px; }
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox.active { display: flex; }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 4px;
+        }
+        .lightbox-close {
+            position: fixed;
+            top: 20px; right: 30px;
+            color: #fff;
+            font-size: 2.5rem;
+            cursor: pointer;
+        }
+        .lightbox-prev, .lightbox-next {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fff;
+            font-size: 2.5rem;
+            cursor: pointer;
+            padding: 10px;
+        }
+        .lightbox-prev { left: 15px; }
+        .lightbox-next { right: 15px; }
+    </style>
+</head>
+<body>
+    <div class="gallery-container">
+        <h2 class="gallery-title">STYLE GALLERY</h2>
+        <div class="gallery-grid">
+            <img src="8209.jpg" onclick="openLightbox(0)">
+            <img src="8210.jpg" onclick="openLightbox(1)">
+            <img src="8211.jpg" onclick="openLightbox(2)">
+            <img src="8212.jpg" onclick="openLightbox(3)">
+            <img src="8213.jpg" onclick="openLightbox(4)">
+            <img src="8214.jpg" onclick="openLightbox(5)">
+            <img src="8215.jpg" onclick="openLightbox(6)">
+            <img src="8216.jpg" onclick="openLightbox(7)">
+            <img src="8217.jpg" onclick="openLightbox(8)">
+            <img src="8218.jpg" onclick="openLightbox(9)">
+            <img src="8219.jpg" onclick="openLightbox(10)">
+            <img src="8220.jpg" onclick="openLightbox(11)">
+            <img src="8221.jpg" onclick="openLightbox(12)">
+            <img src="8222.jpg" onclick="openLightbox(13)">
+        </div>
+    </div>
+
+    <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+        <span class="lightbox-close" onclick="closeLightbox()">✕</span>
+        <span class="lightbox-prev" onclick="changeImage(-1)">&#10094;</span>
+        <img id="lightbox-img" src="">
+        <span class="lightbox-next" onclick="changeImage(1)">&#10095;</span>
+    </div>
+
+    <script>
+        var images = ['8209.jpg','8210.jpg','8211.jpg','8212.jpg','8213.jpg','8214.jpg',
+                      '8215.jpg','8216.jpg','8217.jpg','8218.jpg','8219.jpg','8220.jpg',
+                      '8221.jpg','8222.jpg'];
+        var current = 0;
+
+        function openLightbox(index) {
+            current = index;
+            document.getElementById('lightbox-img').src = images[current];
+            document.getElementById('lightbox').classList.add('active');
+        }
+        function closeLightbox(e) {
+            if (!e || e.target !== document.getElementById('lightbox-img')) {
+                document.getElementById('lightbox').classList.remove('active');
+            }
+        }
+        function changeImage(dir) {
+            current = (current + dir + images.length) % images.length;
+            document.getElementById('lightbox-img').src = images[current];
+            event.stopPropagation();
+        }
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight') changeImage(1);
+            if (e.key === 'ArrowLeft') changeImage(-1);
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
